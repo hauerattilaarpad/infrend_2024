@@ -1,0 +1,54 @@
+<div class="row">
+    <div class="col-md-6">
+        <form [formGroup]="travelForm">
+            <div class="mb-3">
+                <label for="date" class="form-label">Dátum</label>
+                <input type="text" class="form-control" id="date" formControlName="date">
+            </div>
+            <div class="mb-3">
+                <label for="type" class="form-label">Típus</label>
+                <select class="form-select" id="type" formControlName="type">
+                    <option Work>Céges</option>
+                    <option Private>Magán</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="startPlace" class="form-label">Indulási hely</label>
+                <input type="text" class="form-control" id="startPlace" formControlName="startPlace">
+            </div>
+            <div class="mb-3">
+                <label for="endPlace" class="form-label">Érkezési hely</label>
+                <input type="text" class="form-control" id="endPlace" formControlName="endPlace">
+            </div>
+            <div class="mb-3">
+                <label for="traveledDistance" class="form-label">Megtett kilométer</label>
+                <input type="text" class="form-control" id="traveledDistance" formControlName="traveledDistance">
+            </div>
+            <div class="mb-3">
+                <label for="newKm" class="form-label">Új kilométer állás</label>
+                <input type="text" class="form-control" id="newKm" formControlName="newKm">
+            </div>
+            <div class="mb-3">
+                <label for="driver" class="form-label">Sofőr</label>
+                <select class="form-select" id="driver" formControlName="driver">
+                    @for(driver of drivers; track $index){
+                    <option [ngValue]="{id: driver.id}">{{driver.name}} {{driver.driversLicenseId}}</option>
+                    }
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="car" class="form-label">Autó</label>
+                <select class="form-select" id="car" formControlName="car">
+                    @for(car of cars; track $index){
+                    <option [ngValue]="{id: car.id}">{{car.type}} {{car.licensePlate}}</option>
+                    }
+                </select>
+            </div>
+        </form>
+        <div class="text-end">
+            <button class="btn btn-outline-primary" (click)="saveTravel()">Mentés</button>
+            <button class="btn btn-outline-primary" (click)="saveTravelWithComeback()">Mentés és visszaút
+                generálása</button>
+        </div>
+    </div>
+</div>

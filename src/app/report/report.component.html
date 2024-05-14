@@ -1,0 +1,145 @@
+<form [formGroup]="reportForm">
+    <div class="row mt-5">
+        <div class="col-md-4">
+            <label for="date">Dátum:</label>
+            <input type="month" id="date" class="form-control" formControlName="date">
+        </div>
+        <div class="col-md-4">
+            <label for="car">Autó:</label>
+            <select id="car" class="form-select" formControlName="car">
+                @for(car of cars; track $index){
+                <option [ngValue]="car.id">{{car.type}} {{car.licensePlate}}</option>
+                }
+            </select>
+        </div>
+        <div class="col-md-4">
+            <button class="btn btn-primary mt-4" (click)="selectquery()">Lekérdez</button>
+        </div>
+    </div>
+</form>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Típus</th>
+            <th>Rendszám</th>
+            <th>Üzemanyag típus</th>
+            <th>Üzemanyag fogyasztás</th>
+            <th>Kezdő kilométer</th>
+            <th>Végző kilométer</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>{{selectedCar.id}}</td>
+            <td>{{selectedCar.type}}</td>
+            <td>{{selectedCar.licensePlate}}</td>
+            <td>{{selectedCar.fuelType}}</td>
+            <td>{{selectedCar.fuelConsuption}} L/100km</td>
+            <td>{{minNewKm}} Km</td>
+            <td>{{maxNewKm}} Km</td>
+        </tr>
+
+    </tbody>
+</table>
+<div class="row section-margin">
+    <div class="col-md-12">
+        <label>Magán Összesítés:</label>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Megtett távolság</th>
+                    <th>Üzemanyag fogyasztás</th>
+                    <th>Átalány költség</th>
+                    <th>Összes költség</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>{{privateTravel}} Km</td>
+                    <td>{{privateFuel}} Ft</td>
+                    <td>{{privatePrice}} Ft</td>
+                    <td>{{privateFullPrice}} Ft</td>
+                </tr>
+            </tbody>
+        </table>
+        <label>Magán utak:</label>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Dátum</th>
+                    <th>Indulási hely</th>
+                    <th>Érkezési hely</th>
+                    <th>Megtett kilométer</th>
+                    <th>Új kilométer állás</th>
+                    <th>Sofőr</th>
+                </tr>
+            </thead>
+            <tbody>
+                @for( travel of travelPrivate; track $index){
+                <tr>
+                    <td>{{travel.id}}</td>
+                    <td>{{travel.date}}</td>
+                    <td>{{travel.startPlace}}</td>
+                    <td>{{travel.endPlace}}</td>
+                    <td>{{travel.traveledDistance}} Km</td>
+                    <td>{{travel.newKm}} Km</td>
+                    <td>{{travel.driver?.name}}</td>
+                </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div class="row section-margin">
+    <div class="col-md-12">
+        <label>Üzleti Összesítés:</label>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Megtett távolság</th>
+                    <th>Üzemanyag fogyasztás</th>
+                    <th>Átalány költség</th>
+                    <th>Összes költség</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>{{workTravel}} Km</td>
+                    <td>{{workFuel}} Ft</td>
+                    <td>{{workPrice}} Ft</td>
+                    <td>{{workFullPrice}} Ft</td>
+                </tr>
+            </tbody>
+        </table>
+        <label>Üzleti utak:</label>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Dátum</th>
+                    <th>Indulási hely</th>
+                    <th>Érkezési hely</th>
+                    <th>Megtett kilométer</th>
+                    <th>Új kilométer állás</th>
+                    <th>Sofőr</th>
+                </tr>
+            </thead>
+            <tbody>
+                @for( travel of travelWork; track $index){
+                <tr>
+                    <td>{{travel.id}}</td>
+                    <td>{{travel.date}}</td>
+                    <td>{{travel.startPlace}}</td>
+                    <td>{{travel.endPlace}}</td>
+                    <td>{{travel.traveledDistance}} Km</td>
+                    <td>{{travel.newKm}} Km</td>
+                    <td>{{travel.driver?.name}}</td>
+                </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,33 @@
+<table class="table table-striped">
+    <thead>
+        <tr>    
+            <th>ID</th>
+            <th>Név</th>
+            <th>Lakcím</th>
+            <th>Születési idő</th>
+            <th>Jogosítvány szám</th>
+            <th>Jogosítvány lejárat</th>
+            <th>Módosítás</th>
+            <th>Törlés</th>
+        </tr>
+    </thead>
+    <tbody>
+        @for( driver of drivers; track $index){
+        <tr [class.color]="driver.licenseExpireDate < currentDate">
+            
+            <td>{{driver.id}}</td>
+            <td>{{driver.name}}</td>
+            <td>{{driver.address}}</td>
+            <td>{{driver.dateOfBirth}}</td>
+            <td>{{driver.driversLicenseId}}</td>
+            <td>{{driver.licenseExpireDate}}</td>
+            <td>
+                <button class="btn btn-primary btn-sm" (click)="goToDriverForm(driver.id)">Módosítás</button>
+            </td>
+            <td>
+                <button class="btn btn-danger btn-sm" (click)="deleteDriver(driver)">Törlés</button>
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>
