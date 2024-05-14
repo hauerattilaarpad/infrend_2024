@@ -36,7 +36,7 @@ CREATE TABLE IF NOT EXISTS `car` (
   `fuelConsuption` varchar(255) COLLATE utf8mb4_hungarian_ci NOT NULL,
   `startingKm` varchar(255) COLLATE utf8mb4_hungarian_ci NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_hungarian_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_hungarian_ci;
 
 --
 -- A tábla adatainak kiíratása `car`
@@ -52,8 +52,8 @@ INSERT INTO `car` (`id`, `licensePlate`, `type`, `fuelType`, `fuelConsuption`, `
 (7, 'GHI890', 'Audi A4', 'Benzin', '3', '1234322'),
 (8, 'HIJ901', 'Mercedes-Benz C-Class', 'Dízel', '12', '123476'),
 (9, 'IJK012', 'Fiat 500', 'Benzin', '20', '250000'),
-(10, 'UOP482', 'Nissan GTR', 'Diesel', '10', '12000');
-(52, 'JUF234', 'Skoda Octavia', 'Dízel', '10', '123000'),
+(10, 'UOP482', 'Nissan GTR', 'Diesel', '10', '12000'),
+(11, 'JUF234', 'Skoda Octavia', 'Dízel', '10', '123000');
 
 -- --------------------------------------------------------
 
