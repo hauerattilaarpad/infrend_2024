@@ -1,16 +1,21 @@
 # BankingApp
 
 Általános leírás
+
 A feladat célja egy vállalat útnyilvántartását segítő rendszer elkészítése. Az útnyilvántartás az alapja annak, hogy a céges autóval kapcsolatos benzin- és egyéb költségek elszámolhatóak legyenek.
 
 Felhasználási esetek
+
 Autók nyilvántartása
+
 Készítsen felületet a cégnél használatban lévő autók kezelésére! Az autókkal kapcsolatban az alábbi adatokat kell eltárolni: rendszám, típus, üzemanyag, fogyasztás (liter/100km), kezdő kilométeróra-állás. Készítsen felületet, melyen listázhatók a felvitt járművek!
 
 Sofőrök nyilvántartása
+
 Készítsen felületet a céges autók vezetésére jogosult munkavállalók kezelésére! A sofőrökkel kapcsolatban az alábbi adatokat kell tárolni: név, születési idő, lakcím, jogosítvány száma, jogosítvány lejárati dátuma. Készítsen felületet, melyen listázhatók és szükség esetén módosíthatók a sofőrök adatai! A lejárt vezetői engedéllyel rendelkezők piros színnel jelenjenek meg!
 
 Utazások nyilvántartása
+
 Készítsen felületet utazások felvitelére az alábbiak szerint:
 
 1. Az utazás megadásakor szükséges autó és sofőr választása, lejárt vezetői engedéllyel rendelkező sofőr ne legyen kiválasztható!
@@ -22,6 +27,7 @@ Készítsen felületet utazások felvitelére az alábbiak szerint:
 Tegye lehetővé az utazások listázását és utólagos módosítását!
 
 Havi jelentés készítése
+
 Tegye lehetővé a rendszerben havi jelentések megjelenítését az alábbiak szerint:
 
 1. A felhasználónak ki kell választania a megfelelő év megfelelő hónapját, majd a lekérdezett autó rendszámát is.
