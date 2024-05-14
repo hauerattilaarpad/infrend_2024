@@ -1,24 +1,51 @@
 # BankingApp
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.2.0.
+Általános leírás
+A feladat célja egy vállalat útnyilvántartását segítő rendszer elkészítése. Az útnyilvántartás az alapja annak, hogy a céges autóval kapcsolatos benzin- és egyéb költségek elszámolhatóak legyenek.
+
+Felhasználási esetek
+Autók nyilvántartása
+Készítsen felületet a cégnél használatban lévő autók kezelésére! Az autókkal kapcsolatban az alábbi adatokat kell eltárolni: rendszám, típus, üzemanyag, fogyasztás (liter/100km), kezdő kilométeróra-állás. Készítsen felületet, melyen listázhatók a felvitt járművek!
+
+Sofőrök nyilvántartása
+Készítsen felületet a céges autók vezetésére jogosult munkavállalók kezelésére! A sofőrökkel kapcsolatban az alábbi adatokat kell tárolni: név, születési idő, lakcím, jogosítvány száma, jogosítvány lejárati dátuma. Készítsen felületet, melyen listázhatók és szükség esetén módosíthatók a sofőrök adatai! A lejárt vezetői engedéllyel rendelkezők piros színnel jelenjenek meg!
+
+Utazások nyilvántartása
+Készítsen felületet utazások felvitelére az alábbiak szerint:
+
+1. Az utazás megadásakor szükséges autó és sofőr választása, lejárt vezetői engedéllyel rendelkező sofőr ne legyen kiválasztható!
+
+2. Ezután meg kell adni az utazással kapcsolatos további adatokat: dátum, utazás jellege (magán vagy céges), indulás helye, érkezés helye, megtett távolság, új kilométeróra-állás.
+
+3. Tegye lehetővé a visszaút automatikus regisztrálását is (ekkor egy második rekord is legyen beillesztve az adatbázisba, az indulás és az érkezés helyének megcserélésével, a kilométeróra-állás kiszámításával)!
+
+Tegye lehetővé az utazások listázását és utólagos módosítását!
+
+Havi jelentés készítése
+Tegye lehetővé a rendszerben havi jelentések megjelenítését az alábbiak szerint:
+
+1. A felhasználónak ki kell választania a megfelelő év megfelelő hónapját, majd a lekérdezett autó rendszámát is.
+
+2. A jelentés tartalmazza az autó alapadatait, a megjelölt időszakra vonatkozó kezdő- és befejező óraállást, az autóval megtett utakat, valamint a magán- és céges utakra külön-külön összesítve az alábbi adatokat:
+
+megtett távolság
+üzemanyag fogyasztás (számoljunk mindenütt 480 Ft/liter üzemanyagárral)
+átalány költség (10 Ft/km)
+összes költség (az előbbiek összege)
 
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
-## Code scaffolding
+# Indítás
+npm run start:client 
+npm run start:server
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+# Készítette: Hauer Attila Árpád JJL4WE
 
-## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
-## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
 
 Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
 
